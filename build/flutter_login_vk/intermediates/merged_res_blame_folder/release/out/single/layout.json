@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "ru.innim.flutter_login_vk-merged_res-31:/layout/notification_template_part_chronometer.xml",
+        "source": "ru.innim.flutter_login_vk-core-1.13.1-7:/layout/notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "ru.innim.flutter_login_vk-merged_res-31:/layout/ime_secondary_split_test_activity.xml",
+        "source": "ru.innim.flutter_login_vk-core-1.13.1-7:/layout/ime_secondary_split_test_activity.xml"
+    },
+    {
+        "merged": "ru.innim.flutter_login_vk-merged_res-31:/layout/ime_base_split_test_activity.xml",
+        "source": "ru.innim.flutter_login_vk-core-1.13.1-7:/layout/ime_base_split_test_activity.xml"
+    },
+    {
+        "merged": "ru.innim.flutter_login_vk-merged_res-31:/layout/notification_template_part_time.xml",
+        "source": "ru.innim.flutter_login_vk-core-1.13.1-7:/layout/notification_template_part_time.xml"
+    },
+    {
+        "merged": "ru.innim.flutter_login_vk-merged_res-31:/layout/custom_dialog.xml",
+        "source": "ru.innim.flutter_login_vk-core-1.13.1-7:/layout/custom_dialog.xml"
+    },
+    {
+        "merged": "ru.innim.flutter_login_vk-merged_res-31:/layout/vk_webview_auth_dialog.xml",
+        "source": "ru.innim.flutter_login_vk-jetified-android-sdk-core-3.5.0-22:/layout/vk_webview_auth_dialog.xml"
+    }
+]

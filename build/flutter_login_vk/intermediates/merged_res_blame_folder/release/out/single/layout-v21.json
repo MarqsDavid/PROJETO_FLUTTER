@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "ru.innim.flutter_login_vk-merged_res-31:/layout-v21/notification_action_tombstone.xml",
+        "source": "ru.innim.flutter_login_vk-core-1.13.1-7:/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "ru.innim.flutter_login_vk-merged_res-31:/layout-v21/notification_action.xml",
+        "source": "ru.innim.flutter_login_vk-core-1.13.1-7:/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "ru.innim.flutter_login_vk-merged_res-31:/layout-v21/notification_template_custom_big.xml",
+        "source": "ru.innim.flutter_login_vk-core-1.13.1-7:/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "ru.innim.flutter_login_vk-merged_res-31:/layout-v21/notification_template_icon_group.xml",
+        "source": "ru.innim.flutter_login_vk-core-1.13.1-7:/layout-v21/notification_template_icon_group.xml"
+    }
+]

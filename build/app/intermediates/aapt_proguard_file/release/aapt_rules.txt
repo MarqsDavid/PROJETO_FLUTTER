@@ -1,0 +1,12 @@
+-keep class android.app.Application { <init>(); }
+-keep class androidx.core.app.CoreComponentFactory { <init>(); }
+-keep class androidx.profileinstaller.ProfileInstallReceiver { <init>(); }
+-keep class androidx.startup.InitializationProvider { <init>(); }
+-keep class com.example.dmega.MainActivity { <init>(); }
+-keep class com.vk.api.sdk.internal.VKInitProvider { <init>(); }
+-keep class com.vk.api.sdk.ui.VKCaptchaActivity { <init>(); }
+-keep class com.vk.api.sdk.ui.VKConfirmationActivity { <init>(); }
+-keep class com.vk.api.sdk.ui.VKWebViewAuthActivity { <init>(); }
+-keep class io.flutter.plugins.urllauncher.WebViewActivity { <init>(); }
+-keep class androidx.browser.browseractions.BrowserActionsFallbackMenuView { <init>(android.content.Context, android.util.AttributeSet); }
+

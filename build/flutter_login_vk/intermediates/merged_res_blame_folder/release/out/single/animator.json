@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "ru.innim.flutter_login_vk-merged_res-31:/animator/fragment_close_enter.xml",
+        "source": "ru.innim.flutter_login_vk-fragment-1.7.1-14:/animator/fragment_close_enter.xml"
+    },
+    {
+        "merged": "ru.innim.flutter_login_vk-merged_res-31:/animator/fragment_open_enter.xml",
+        "source": "ru.innim.flutter_login_vk-fragment-1.7.1-14:/animator/fragment_open_enter.xml"
+    },
+    {
+        "merged": "ru.innim.flutter_login_vk-merged_res-31:/animator/fragment_open_exit.xml",
+        "source": "ru.innim.flutter_login_vk-fragment-1.7.1-14:/animator/fragment_open_exit.xml"
+    },
+    {
+        "merged": "ru.innim.flutter_login_vk-merged_res-31:/animator/fragment_fade_enter.xml",
+        "source": "ru.innim.flutter_login_vk-fragment-1.7.1-14:/animator/fragment_fade_enter.xml"
+    },
+    {
+        "merged": "ru.innim.flutter_login_vk-merged_res-31:/animator/fragment_close_exit.xml",
+        "source": "ru.innim.flutter_login_vk-fragment-1.7.1-14:/animator/fragment_close_exit.xml"
+    },
+    {
+        "merged": "ru.innim.flutter_login_vk-merged_res-31:/animator/fragment_fade_exit.xml",
+        "source": "ru.innim.flutter_login_vk-fragment-1.7.1-14:/animator/fragment_fade_exit.xml"
+    }
+]

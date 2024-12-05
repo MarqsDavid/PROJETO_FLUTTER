@@ -1,0 +1,60 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.example.dmega.app-mergeDebugResources-31:/values-ru/values-ru.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\DAVID\\.gradle\\caches\\8.9\\transforms\\b77c610343c437af2a69838b59b52b23\\transformed\\browser-1.8.0\\res\\values-ru\\values-ru.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,163,268,380",
+                        "endColumns": "107,104,111,104",
+                        "endOffsets": "158,263,375,480"
+                    },
+                    "to": {
+                        "startLines": "9,10,11,12",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "782,890,995,1107",
+                        "endColumns": "107,104,111,104",
+                        "endOffsets": "885,990,1102,1207"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\DAVID\\.gradle\\caches\\8.9\\transforms\\1c6ea5c75523ce34010962703857ea92\\transformed\\core-1.13.1\\res\\values-ru\\values-ru.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,153,255,356,457,562,665,782",
+                        "endColumns": "97,101,100,100,104,102,116,100",
+                        "endOffsets": "148,250,351,452,557,660,777,878"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,13",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,153,255,356,457,562,665,1212",
+                        "endColumns": "97,101,100,100,104,102,116,100",
+                        "endOffsets": "148,250,351,452,557,660,777,1308"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\DAVID\\.gradle\\caches\\8.9\\transforms\\ee305e7187ecfd5913a29d2c124499b5\\transformed\\jetified-android-sdk-core-3.5.0\\res\\values-ru\\values-ru.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,122,175,255",
+                        "endColumns": "66,52,79,46",
+                        "endOffsets": "117,170,250,297"
+                    },
+                    "to": {
+                        "startLines": "14,15,16,17",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "1313,1380,1433,1513",
+                        "endColumns": "66,52,79,46",
+                        "endOffsets": "1375,1428,1508,1555"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,4 @@
+#Sun Nov 24 21:25:21 BRT 2024
+base.0=D\:\\Documentos\\PROJETO_FLUTTER\\dmega\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
