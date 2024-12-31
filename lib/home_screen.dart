@@ -3,9 +3,23 @@ import 'package:circle_nav_bar/circle_nav_bar.dart';
 import 'main.dart';
 import './models/usuario.dart';
 import './database/banco_de_dados.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 void main() {
   runApp(const HomeScreen());
+}
+
+Future<List<Map<String, dynamic>>> fetchData() async {
+  final response = await http
+      .get(Uri.parse('https://dmega.com.br/api_flutter/product_views.php'));
+
+  if (response.statusCode == 200) {
+    List<dynamic> data = json.decode(response.body);
+    return data.map((item) => item as Map<String, dynamic>).toList();
+  } else {
+    throw Exception('Falha ao carregar os dados');
+  }
 }
 
 class HomeScreen extends StatelessWidget {
@@ -838,86 +852,71 @@ class _MyHomePageState extends State<MyHomePage>
                     borderRadius: BorderRadius.circular(12.0),
                     child: SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
-                      child: DataTable(
-                        headingRowColor:
-                            WidgetStateProperty.all(Colors.lightBlue),
-                        headingTextStyle: const TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        dataRowColor: WidgetStateProperty.all(Colors.white),
-                        border: TableBorder(
-                          horizontalInside: BorderSide(
-                            color: Colors.grey.shade300,
-                            width: 1,
-                          ),
-                          verticalInside: BorderSide(
-                            color: Colors.grey.shade300,
-                            width: 1,
-                          ),
-                          top: BorderSide.none,
-                          bottom: BorderSide.none,
-                          left: BorderSide.none,
-                          right: BorderSide.none,
-                        ),
-                        columns: const [
-                          DataColumn(label: Text('Descrição')),
-                          DataColumn(label: Text('ID Patrimônio')),
-                          DataColumn(label: Text('Localização')),
-                          DataColumn(label: Text('Responsável')),
-                          DataColumn(label: Text('Data')),
-                          DataColumn(label: Text('Status')),
-                        ],
-                        rows: const [
-                          DataRow(cells: [
-                            DataCell(Text('Descrição do Item 1')),
-                            DataCell(Text('ID123')),
-                            DataCell(Text('Localização 1')),
-                            DataCell(Text('Responsável 1')),
-                            DataCell(Text('01/01/2024')),
-                            DataCell(Text('Status 1')),
-                          ]),
-                          DataRow(cells: [
-                            DataCell(Text('Descrição do Item 2')),
-                            DataCell(Text('ID124')),
-                            DataCell(Text('Localização 2')),
-                            DataCell(Text('Responsável 2')),
-                            DataCell(Text('02/01/2024')),
-                            DataCell(Text('Status 2')),
-                          ]),
-                          DataRow(cells: [
-                            DataCell(Text('Descrição do Item 3')),
-                            DataCell(Text('ID125')),
-                            DataCell(Text('Localização 3')),
-                            DataCell(Text('Responsável 3')),
-                            DataCell(Text('03/01/2024')),
-                            DataCell(Text('Status 3')),
-                          ]),
-                          DataRow(cells: [
-                            DataCell(Text('Descrição do Item 4')),
-                            DataCell(Text('ID126')),
-                            DataCell(Text('Localização 4')),
-                            DataCell(Text('Responsável 4')),
-                            DataCell(Text('04/01/2024')),
-                            DataCell(Text('Status 4')),
-                          ]),
-                          DataRow(cells: [
-                            DataCell(Text('Descrição do Item 5')),
-                            DataCell(Text('ID127')),
-                            DataCell(Text('Localização 5')),
-                            DataCell(Text('Responsável 5')),
-                            DataCell(Text('05/01/2024')),
-                            DataCell(Text('Status 5')),
-                          ]),
-                          DataRow(cells: [
-                            DataCell(Text('Descrição do Item 6')),
-                            DataCell(Text('ID128')),
-                            DataCell(Text('Localização 6')),
-                            DataCell(Text('Responsável 6')),
-                            DataCell(Text('06/01/2024')),
-                            DataCell(Text('Status 6')),
-                          ]),
-                        ],
+                      child: FutureBuilder<List<Map<String, dynamic>>>(
+                        future:
+                            fetchData(), // Chama a função que busca os dados
+                        builder: (context, snapshot) {
+                          if (snapshot.connectionState ==
+                              ConnectionState.waiting) {
+                            return Center(
+                                child:
+                                    CircularProgressIndicator()); // Exibe um carregando enquanto aguarda
+                          } else if (snapshot.hasError) {
+                            return Center(
+                                child: Text(
+                                    'Erro: ${snapshot.error}')); // Exibe erro caso ocorra
+                          } else if (!snapshot.hasData ||
+                              snapshot.data!.isEmpty) {
+                            return Center(
+                                child: Text('Nenhum dado encontrado.'));
+                          } else {
+                            // Obtenção dos dados da API
+                            List<Map<String, dynamic>> assets = snapshot.data!;
+
+                            return DataTable(
+                              headingRowColor:
+                                  MaterialStateProperty.all(Colors.lightBlue),
+                              headingTextStyle: const TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              dataRowColor:
+                                  MaterialStateProperty.all(Colors.white),
+                              border: TableBorder(
+                                horizontalInside: BorderSide(
+                                  color: Colors.grey.shade300,
+                                  width: 1,
+                                ),
+                                verticalInside: BorderSide(
+                                  color: Colors.grey.shade300,
+                                  width: 1,
+                                ),
+                                top: BorderSide.none,
+                                bottom: BorderSide.none,
+                                left: BorderSide.none,
+                                right: BorderSide.none,
+                              ),
+                              columns: const [
+                                DataColumn(label: Text('Descrição')),
+                                DataColumn(label: Text('ID Patrimônio')),
+                                DataColumn(label: Text('Localização')),
+                                DataColumn(label: Text('Responsável')),
+                                DataColumn(label: Text('Data')),
+                                DataColumn(label: Text('Status')),
+                              ],
+                              rows: assets.map<DataRow>((asset) {
+                                return DataRow(cells: [
+                                  DataCell(Text(asset['ddescription'] ?? '')),
+                                  DataCell(Text(asset['assetNumber'] ?? '')),
+                                  DataCell(Text(asset['location_description'] ?? '')),
+                                  DataCell(Text(asset['responsible'] ?? '')),
+                                  DataCell(Text(asset['dateCreation'] ?? '')),
+                                  DataCell(Text(asset['sstatus'] ?? '')),
+                                ]);
+                              }).toList(),
+                            );
+                          }
+                        },
                       ),
                     ),
                   ),
